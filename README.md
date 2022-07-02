@@ -13,7 +13,7 @@ B站视频：https://www.bilibili.com/video/BV1oT41137CU<br>
 
 克隆本仓库至/root目录<br>
 ```
-git clone https://github.com/HelloZhing/pvevm-hooks.git
+git clone https://gitee.com/hellozhing/pvevm-hooks.git
 ```
 添加可执行权限<br>
 ```
@@ -23,11 +23,12 @@ chmod a+x *.sh *.pl
 脚本是基于我的intel B365主板编写的，需要根据你的硬件实际情况对vm-stop.sh中相关内容进行修改<br>
 复制perl脚本至snippets目录<br>
 ```
-cp hooks-igpupt.pl /var/lib/vz/snippets
+mkdir /var/lib/vz/snippets
+cp hooks-igpupt.pl /var/lib/vz/snippets/hooks-igpupt.pl
 ```
 将钩子脚本应用至虚拟机<br>
 ```
-qm set <VMID> -hookscript local:snippets/hooks-igpupt.pl
+qm set <VMID> --hookscript local:snippets/hooks-igpupt.pl
 ```
 <br>
 如果PVE安装了图形界面<br>
@@ -36,7 +37,7 @@ qm set <VMID> -hookscript local:snippets/hooks-igpupt.pl
 
 
 #### 感谢
-[@ledisthebest](https://gitee.com/ledisthebest)<br>
+@ledisthebest<br>
 提供的脚本vfio-startup.sh和vfio-teardown.sh<br>
 <br>
 
