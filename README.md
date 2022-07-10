@@ -13,14 +13,14 @@ B站视频：https://www.bilibili.com/video/BV1oT41137CU<br>
 
 克隆本仓库至/root目录<br>
 ```
-git clone https://gitee.com/hellozhing/pvevm-hooks.git
+git clone https://github.com/HelloZhing/pvevm-hooks.git
 ```
 添加可执行权限<br>
 ```
 cd pvevm-hooks
 chmod a+x *.sh *.pl
 ```
-脚本是基于我的intel B365主板编写的，需要根据你的硬件实际情况对vm-stop.sh中相关内容进行修改<br>
+脚本中默认没有启用USB直通返回，如需启用，请取消vm-stop.sh中“echo $usb_addr...”两行注释。<br>
 复制perl脚本至snippets目录<br>
 ```
 mkdir /var/lib/vz/snippets
